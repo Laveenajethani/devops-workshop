@@ -1,0 +1,3 @@
+question 1:
+create file structure
+mkdir -p A/{B/{D/{I/{M/{Z}},J/{L}},E/{H/{L/{Z}}}},C/{F/{H},G/{K}}}
