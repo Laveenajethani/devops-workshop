@@ -1,3 +1,10 @@
 question 1:
 create file structure
 mkdir -p A/{B/{D/{I/{M/{Z}},J/{L}},E/{H/{L/{Z}}}},C/{F/{H},G/{K}}}
+
+
+question2:
+change file permission of date command we only have to  provide access to jack user
+chown jack /usr/bin/date
+chgrp jack /usr/bin/date
+ls -l /usr/bin/date
