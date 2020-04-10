@@ -27,3 +27,4 @@ cp -r /home/B/k2 /home/A/
 question4:
 run cal command in every 10sec and store output in /tmp/a.txt
 -->
+watch -n10 cal > /tmp/a.txt
