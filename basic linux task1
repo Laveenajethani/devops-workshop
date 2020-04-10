@@ -8,3 +8,8 @@ change file permission of date command we only have to  provide access to jack u
 chown jack /usr/bin/date
 chgrp jack /usr/bin/date
 ls -l /usr/bin/date
+chmod o-x /usr/bin/date
+chmod o-r /usr/bin/date
+chmod g-x /usr/bin/date
+chmod g-r /usr/bin/date
+chmod u+rwx /usr/bin/date
