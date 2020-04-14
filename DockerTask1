@@ -14,5 +14,5 @@ do
   else
     sudo docker container run -d --restart unless-stopped --name adhocnw$count java ping 8.8.8.8
   fi
-  ((coun++))
+  ((count++))
 done
