@@ -1,0 +1,13 @@
+task2:
+DOCKER-IN-DOCKER
+#pulling docker image
+docker pull jpetazzo/dind
+#running container
+docker run --privileged -d -p 1234 -e PORT=1234 --name pri  jpetazzo/dind
+#going inside container
+docker exec -it pri /bin/bash
+#inside container:
+    docker run -t -i --privileged --name pri1  jpetazzo/dind
+#exiting from container we have to exit from two container
+    exit
+    exit
