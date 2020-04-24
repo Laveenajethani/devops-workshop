@@ -1,0 +1,17 @@
+version: '3'
+services:
+ db:
+  image: mysql
+  command: --default-authentication-plugin=mysql_native_password
+  restart: always
+  environment:
+   MYSQL_ROOT_PASSWORD: redhat
+
+ myweb:
+  image: Laviweb
+  build: .
+  container_name: Lavicon
+  depends_on:
+   - db
+  ports:
+   - "9991:80"
