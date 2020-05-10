@@ -23,3 +23,8 @@ done
 
 
 ***task3***
+docker not install locally in system
+
+
+***task4***
+docker stats --all --no-stream --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.MemPerc}}" > Con_resource.txt
