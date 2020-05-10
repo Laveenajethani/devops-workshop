@@ -1,18 +1,25 @@
+***task1***
 #!/bin/bash
 count=1
 while [ $count -le 100 ]
 do
   if [ $count -lt 26 ]
   then
-    sudo docker container run -d --restart unless-stopped --name adhocnw$count alpine ping 8.8.8.8
+    sudo docker container run -d --restart unless-stopped --name adhocnw$count fedora ping 8.8.8.8
   elif [ $count -ge 26 && $count -le 50 ]
   then
-    sudo docker container run -d --restart unless-stopped --name adhocnw$count fedora ping 8.8.8.8
+    sudo docker container run -d --restart unless-stopped --name adhocnw$count alpine ping 8.8.8.8
   elif [ $count -ge 51 && $count -le 75 ]
   then
     sudo docker container run -d --restart unless-stopped --name adhocnw$count centos ping 8.8.8.8
   else
-    sudo docker container run -d --restart unless-stopped --name adhocnw$count java ping 8.8.8.8
+    sudo docker container run -d --restart unless-stopped --name adhocnw$count alpine ifconfig
   fi
   ((count++))
 done
+
+***task2***
+ docker ps -a --format "table {{.Names}}    {{.CreatedAt}}" > adhoc.txt
+
+
+***task3***
