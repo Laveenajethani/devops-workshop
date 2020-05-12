@@ -1,7 +1,16 @@
-##dockerfile
+## the shell script for running 10 alpine containers
+## container.sh
+#!/bin/bash
+count = 1
+while [ $count -le 11 ]
+do
+docker container run -d --name adhoc$count alpine fb.com
+((count++))
+done
 
+##dockerfile
 FROM centos
-MAINTAINER yukta@yahoo.com
+MAINTAINER laveena.j.21@gmail.com
 run yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 run dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
 run dnf install --nobest docker-ce -y
@@ -21,17 +30,6 @@ play.yml
       shell: docker pull alpine
     - name: Running ten Containers
       shell: sh container.sh
-      
-## the shell script for running 10 alpine containers
-## container.sh
-#!/bin/bash
-count = 1
-while [ $count -le 11 ]
-do
-docker container run -d --name adhoc$count alpine fb.com
-((count++))
-done
-      
       
 ##running the playbook
 ansible-playbook play.yml
