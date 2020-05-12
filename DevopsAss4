@@ -20,7 +20,7 @@ run yum install ansible -y
 docker build -t Lavina:ansible .
 
 ##running docker container
-docker run -it --name lavicon:ansible bash  
+docker run -it --name lavicon lavina:ansible bash  
 
 ##create ansible playbook
 play.yml
